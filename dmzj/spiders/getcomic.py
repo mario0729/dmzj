@@ -30,7 +30,7 @@ class GetcomicSpider(scrapy.Spider):
         
         for i in range(0,len(item['comicname'])):
             #print(item['comicname'][i]+item['comic_url'][i])
-            yield scrapy.Request(url='https://www.dmzj.com/info/yaoshenji.html',callback=self.parse_chapter,meta={'comicname':item['comicname'][i]}) 
+            yield scrapy.Request(url=item['comic_url'][i],callback=self.parse_chapter,meta={'comicname':item['comicname'][i]}) 
 
     def parse_chapter(self,response):
         item = comicInfoItem()

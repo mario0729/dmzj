@@ -19,7 +19,7 @@ class MyImagesPipeline(ImagesPipeline):
         image_paths = [x['path'] for ok, x in results if ok]      # ok判断是否下载成功
         if not image_paths:
             raise DropItem("Item contains no images")
-        item['image_paths'] = image_paths
+        #item['image_paths'] = image_paths
         return item
 
     def file_path(self,request,response=None,info=None):
